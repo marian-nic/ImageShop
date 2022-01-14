@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Common.Abstractions", "src\ImageShop.Common.Abstractions\ImageShop.Common.Abstractions.csproj", "{6DC2E8C6-7AE4-450F-A5A7-B66BC1AD1B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Product.Domain", "src\ImageShop.Product.Domain\ImageShop.Product.Domain.csproj", "{4C89B115-BC8A-4812-B1F7-0780B4C24FBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DC2E8C6-7AE4-450F-A5A7-B66BC1AD1B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DC2E8C6-7AE4-450F-A5A7-B66BC1AD1B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DC2E8C6-7AE4-450F-A5A7-B66BC1AD1B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DC2E8C6-7AE4-450F-A5A7-B66BC1AD1B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C89B115-BC8A-4812-B1F7-0780B4C24FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C89B115-BC8A-4812-B1F7-0780B4C24FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C89B115-BC8A-4812-B1F7-0780B4C24FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C89B115-BC8A-4812-B1F7-0780B4C24FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8964E5E1-EA62-4C54-B643-9F538E9E6182}
+	EndGlobalSection
+EndGlobal
