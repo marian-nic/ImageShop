@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ImageShop.Product.Domain\ImageShop.Product.Domain.csproj" />
+    <ProjectReference Include="..\ImageShop.Product.Dtos\ImageShop.Product.Dtos.csproj" />
+  </ItemGroup>
+
+</Project>

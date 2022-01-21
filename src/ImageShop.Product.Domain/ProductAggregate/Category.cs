@@ -1,4 +1,7 @@
 ﻿using ImageShop.Common.Abstractions;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ImageShop.Product.Domain.ProductAggregate
 {
@@ -13,5 +16,11 @@ namespace ImageShop.Product.Domain.ProductAggregate
 
         #endregion
 
+        public Category(int id, string name) : base(id, name)
+        {
+        }
+
+        public static IEnumerable<Category> List() =>
+            GetAll<Category>().OrderBy(x => x.Id);
     }
 }

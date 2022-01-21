@@ -20,11 +20,51 @@ namespace ImageShop.Product.Domain.ProductAggregate
 
         public decimal Price { get; private set; }
 
-        public User Owner { get; set; }
+        public User Owner { get; private set; }
 
-        public Category Category { get; set; }
+        public Category Category { get; private set; }
+
+        public ImageInfo Image { get; private set; }
 
 
+        public Product(string id, string title, string description, decimal price, Category category, User owner): this(title, description, price, category, owner)
+        {
+            if (!string.IsNullOrWhiteSpace(id))
+                Id = id;
+        }
 
+        public Product(string title, string description, decimal price, Category category, User owner)
+        {
+            if (string.IsNullOrWhiteSpace(Id))
+                Id = Guid.NewGuid().ToString();
+
+            if(string.IsNullOrWhiteSpace(title))
+                throw new ArgumentNullException(nameof(title), "Title is mandatory");
+            Title = title;
+            Description = description;
+
+            if(price < 0)
+                throw new ArgumentOutOfRangeException(nameof(price), price, "Price must be a positive or zero value");
+            Price = price;
+
+            if (category == null)
+                Category = Category.NotSpecified;
+            else
+                Category = category;
+
+            if(owner == null)
+                throw new ArgumentNullException(nameof(owner), "Owner is mandatory");
+            Owner = owner;
+        }
+
+        public void SetTags(List<string> tags)
+        {
+            _tags = tags.Where(t => !string.IsNullOrWhiteSpace(t)).Distinct().ToList();
+        }
+
+        public void SetTextMessages(List<string> textMessages)
+        {
+            _textMessages = textMessages.Where(t => !string.IsNullOrWhiteSpace(t)).Distinct().ToList();
+        }
     }
 }
