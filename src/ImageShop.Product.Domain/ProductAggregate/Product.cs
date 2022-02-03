@@ -15,8 +15,8 @@ namespace ImageShop.Product.Domain.ProductAggregate
         public string Title { get; private set; }
         public string Description { get; private set; }
 
-        public IReadOnlyCollection<string> Tags => _tags.AsReadOnly();
-        public IReadOnlyCollection<string> TextMessages => _textMessages.AsReadOnly();
+        public IReadOnlyCollection<string> Tags => _tags?.AsReadOnly();
+        public IReadOnlyCollection<string> TextMessages => _textMessages?.AsReadOnly();
 
         public decimal Price { get; private set; }
 

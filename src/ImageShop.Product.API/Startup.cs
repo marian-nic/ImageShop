@@ -11,6 +11,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using MediatR;
+using ImageShop.Mappers.Abstractions;
+using ImageShop.Product.Application.Queries;
+using ImageShop.Product.Infrastructure.Cosmos.Repositories;
+using ImageShop.Product.Domain.ProductAggregate;
+using System.IO;
+using System.Reflection;
 
 namespace ImageShop.Product.API
 {
@@ -31,7 +39,17 @@ namespace ImageShop.Product.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ImageShop.Product.API", Version = "v1" });
+                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
             });
+
+            //AutoMapper
+            services.AddAutoMapper(typeof(BaseMapperProfile).Assembly);
+
+            //Mediatr
+            services.AddMediatR(typeof(GetProductsQueryHandler).Assembly);
+
+            //interfaces
+            services.AddScoped<IProductRepository, ProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

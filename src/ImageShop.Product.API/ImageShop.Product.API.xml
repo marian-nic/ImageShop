@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImageShop.Product.API</name>
+    </assembly>
+    <members>
+        <member name="M:ImageShop.Product.API.Controllers.ProductController.Get(System.String,System.String)">
+            <summary>
+            Get a filtered list of products
+            </summary>
+            <param name="title">Search for a title</param>
+            <param name="tag">Search for a tag</param>
+            <returns>A list of products</returns>
+        </member>
+    </members>
+</doc>

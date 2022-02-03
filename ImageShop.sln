@@ -1,19 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31019.35
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Common.Abstractions", "src\ImageShop.Common.Abstractions\ImageShop.Common.Abstractions.csproj", "{6DC2E8C6-7AE4-450F-A5A7-B66BC1AD1B21}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Product.Domain", "src\ImageShop.Product.Domain\ImageShop.Product.Domain.csproj", "{4C89B115-BC8A-4812-B1F7-0780B4C24FBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Demo", "src\ImageShop.Demo\ImageShop.Demo.csproj", "{434445F2-6715-4E43-8A86-7DE115D7A588}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Demo", "src\ImageShop.Demo\ImageShop.Demo.csproj", "{434445F2-6715-4E43-8A86-7DE115D7A588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Product.API", "src\ImageShop.Product.API\ImageShop.Product.API.csproj", "{9056FA2E-03FA-411A-8AC4-33F9CE4E2E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Product.API", "src\ImageShop.Product.API\ImageShop.Product.API.csproj", "{9056FA2E-03FA-411A-8AC4-33F9CE4E2E1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Product.Dtos", "src\ImageShop.Product.Dtos\ImageShop.Product.Dtos.csproj", "{D5928EAC-123D-40A7-A6B5-CA57DBE98234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Product.Dtos", "src\ImageShop.Product.Dtos\ImageShop.Product.Dtos.csproj", "{D5928EAC-123D-40A7-A6B5-CA57DBE98234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Product.Application", "src\ImageShop.Product.Application\ImageShop.Product.Application.csproj", "{AAB01E41-871A-4BF4-B629-CF99BCBE7F10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Product.Application", "src\ImageShop.Product.Application\ImageShop.Product.Application.csproj", "{AAB01E41-871A-4BF4-B629-CF99BCBE7F10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Mappers", "src\ImageShop.Mappers\ImageShop.Mappers.csproj", "{AF33A732-7C98-47CD-A144-AE3CF6B2DA91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Product.Infrastructure.Cosmos", "src\ImageShop.Product.Infrastructure.Cosmos\ImageShop.Product.Infrastructure.Cosmos.csproj", "{44B7E1C6-6EB8-4F10-89BB-87EFB58B4A10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{AAB01E41-871A-4BF4-B629-CF99BCBE7F10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAB01E41-871A-4BF4-B629-CF99BCBE7F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAB01E41-871A-4BF4-B629-CF99BCBE7F10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF33A732-7C98-47CD-A144-AE3CF6B2DA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF33A732-7C98-47CD-A144-AE3CF6B2DA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF33A732-7C98-47CD-A144-AE3CF6B2DA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF33A732-7C98-47CD-A144-AE3CF6B2DA91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B7E1C6-6EB8-4F10-89BB-87EFB58B4A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B7E1C6-6EB8-4F10-89BB-87EFB58B4A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B7E1C6-6EB8-4F10-89BB-87EFB58B4A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B7E1C6-6EB8-4F10-89BB-87EFB58B4A10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
