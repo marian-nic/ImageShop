@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ImageShop.Data.Cosmos\ImageShop.Data.Cosmos.csproj" />
     <ProjectReference Include="..\ImageShop.Mappers\ImageShop.Mappers.csproj" />
     <ProjectReference Include="..\ImageShop.Product.Application\ImageShop.Product.Application.csproj" />
     <ProjectReference Include="..\ImageShop.Product.Dtos\ImageShop.Product.Dtos.csproj" />

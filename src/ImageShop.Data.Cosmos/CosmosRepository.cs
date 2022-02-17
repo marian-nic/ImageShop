@@ -63,13 +63,30 @@ namespace ImageShop.Data.Cosmos
 
                 if (feedResponse != null && feedResponse.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    if (result.Any())
+                    if (feedResponse.Resource.Any())
                     {
                         result.AddRange(feedResponse.Resource);
                     }
                 }
             }
             return result;
+        }
+
+        public async Task<T> CreateAsync(T item, bool returnCreatedItem = false)
+        {
+            var partitionKey = new PartitionKey(item.PartitionKey);
+            var itemResponse = await CosmosContainer.CreateItemAsync<T>(item, partitionKey,
+                new ItemRequestOptions()
+                {
+                    EnableContentResponseOnWrite = returnCreatedItem
+                });
+
+            if(itemResponse != null && itemResponse.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return itemResponse.Resource;
+            }
+
+            return default(T);
         }
     }
 }

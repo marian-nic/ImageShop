@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ImageShop.Product.Domain\ImageShop.Product.Domain.csproj" />
     <ProjectReference Include="..\ImageShop.Product.Dtos\ImageShop.Product.Dtos.csproj" />
+    <ProjectReference Include="..\ImageShop.Product.Infrastructure.Cosmos\ImageShop.Product.Infrastructure.Cosmos.csproj" />
   </ItemGroup>
 
 </Project>

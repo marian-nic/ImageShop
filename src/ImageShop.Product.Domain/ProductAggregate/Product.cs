@@ -66,5 +66,10 @@ namespace ImageShop.Product.Domain.ProductAggregate
         {
             _textMessages = textMessages.Where(t => !string.IsNullOrWhiteSpace(t)).Distinct().ToList();
         }
+
+        public void SetImage(ImageInfo image)
+        {
+            Image = image;
+        }
     }
 }

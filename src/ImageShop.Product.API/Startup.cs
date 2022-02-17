@@ -19,6 +19,9 @@ using ImageShop.Product.Infrastructure.Cosmos.Repositories;
 using ImageShop.Product.Domain.ProductAggregate;
 using System.IO;
 using System.Reflection;
+using ImageShop.Data.Abstraction;
+using ImageShop.Product.Infrastructure.Cosmos;
+using ImageShop.Data.Cosmos;
 
 namespace ImageShop.Product.API
 {
@@ -50,6 +53,9 @@ namespace ImageShop.Product.API
 
             //interfaces
             services.AddScoped<IProductRepository, ProductRepository>();
+
+            //Cosmos DB
+            AddCosmosDbConfigurations(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +78,18 @@ namespace ImageShop.Product.API
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private void AddCosmosDbConfigurations(IServiceCollection services)
+        {
+            //get from app settings
+            CosmosDbConfiguration cosmosDbConfiguration = new CosmosDbConfiguration();
+            var cosmosDbConfigurationSection = Configuration.GetSection("CosmosDbConfiguration");
+            cosmosDbConfigurationSection.Bind(cosmosDbConfiguration);
+
+            services.Configure<CosmosDbConfiguration>(cosmosDbConfigurationSection);
+
+            services.AddScoped<ICosmosRepository<ProductModel>>(provider => new CosmosRepository<ProductModel>(cosmosDbConfiguration.EndpointUri, cosmosDbConfiguration.PrimaryKey, cosmosDbConfiguration.DatabaseId, "products"));
         }
     }
 }
