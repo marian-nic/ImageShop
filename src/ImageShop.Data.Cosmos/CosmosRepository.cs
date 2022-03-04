@@ -81,7 +81,7 @@ namespace ImageShop.Data.Cosmos
                     EnableContentResponseOnWrite = returnCreatedItem
                 });
 
-            if(itemResponse != null && itemResponse.StatusCode == System.Net.HttpStatusCode.OK)
+            if(itemResponse != null && (itemResponse.StatusCode == System.Net.HttpStatusCode.OK || itemResponse.StatusCode == System.Net.HttpStatusCode.Created))
             {
                 return itemResponse.Resource;
             }

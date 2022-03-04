@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ImageShop.Data.Abstraction;
 using ImageShop.Product.Domain.ProductAggregate;
+using ImageShop.Product.Infrastructure.Cosmos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,13 +35,6 @@ namespace ImageShop.Product.Infrastructure.Cosmos.Repositories
 
         public async Task<List<Domain.ProductAggregate.Product>> GetList(string title, string tag)
         {
-            /////TODO move to Create Product method
-            await _repository.InitializeDatabaseAndContainer();
-
-            var producModel = _mapper.Map<ProductModel>(_mockData[1]);
-            var x = await _repository.CreateAsync(producModel, true);
-            /////
-
             var products = await _repository.GetListAsync(p => p.Title.Contains(title) || p.Tags.Contains(tag));
 
             return products.Select( p =>
@@ -52,6 +46,16 @@ namespace ImageShop.Product.Infrastructure.Cosmos.Repositories
                 return product;
             }).ToList();
 
+        }
+
+        public async Task<string> Create(Domain.ProductAggregate.Product product)
+        {
+            await _repository.InitializeDatabaseAndContainer();
+
+            var producModel = _mapper.Map<ProductModel>(product);
+            var result = await _repository.CreateAsync(producModel, true);
+
+            return result.Id;
         }
     }
 }

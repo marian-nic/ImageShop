@@ -9,5 +9,6 @@ namespace ImageShop.Product.Domain.ProductAggregate
     public interface IProductRepository
     {
         public Task<List<Product>> GetList(string title, string tag);
+        public Task<string> Create(Domain.ProductAggregate.Product product);
     }
 }

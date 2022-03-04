@@ -12,5 +12,12 @@
             <param name="tag">Search for a tag</param>
             <returns>A list of products</returns>
         </member>
+        <member name="M:ImageShop.Product.API.Controllers.ProductController.Post(ImageShop.Product.Dtos.ProductDtos.CreateProductDto)">
+            <summary>
+            Create a new product
+            </summary>
+            <param name="newProductDto"> Information regarding the new product</param>
+            <returns>Id of the product</returns>
+        </member>
     </members>
 </doc>

@@ -22,6 +22,7 @@ using System.Reflection;
 using ImageShop.Data.Abstraction;
 using ImageShop.Product.Infrastructure.Cosmos;
 using ImageShop.Data.Cosmos;
+using ImageShop.Product.Infrastructure.Cosmos.Models;
 
 namespace ImageShop.Product.API
 {

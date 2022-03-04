@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ImageShop.Product.Infrastructure.Cosmos
+namespace ImageShop.Product.Infrastructure.Cosmos.Models
 {
     public class ProductModel: CosmosResource
     {

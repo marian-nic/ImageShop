@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using ImageShop.Product.Dtos.ProductDtos;
 using System.Collections.Generic;
 using ImageShop.Product.Application.Queries;
+using ImageShop.Product.Application.Commands;
+using ImageShop.Product.Dtos.CommonDtos;
 
 namespace ImageShop.Product.API.Controllers
 {
@@ -43,6 +45,35 @@ namespace ImageShop.Product.API.Controllers
                 return BadRequest(respose?.ErrorMessage);
 
             return Ok(respose.Payload);
+        }
+
+        /// <summary>
+        /// Create a new product
+        /// </summary>
+        /// <param name="newProductDto"> Information regarding the new product</param>
+        /// <returns>Id of the product</returns>
+        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] CreateProductDto newProductDto)
+        {
+            var command = new CreateProductCommand()
+            {
+                NewProduct = newProductDto,
+                Owner = new UserDto()
+                {
+                    Name = "Authenticated User Name",
+                    Email = "test@something.com"
+                }
+            };
+
+            var response = await _mediator.Send(command);
+
+            if(response == null || !response.ProcessedSuccessfully)
+                return BadRequest(response?.ErrorMessage);
+
+            return Ok(response.Payload);
         }
     }
 }
