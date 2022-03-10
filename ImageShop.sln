@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Mappers", "src\Im
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Product.Infrastructure.Cosmos", "src\ImageShop.Product.Infrastructure.Cosmos\ImageShop.Product.Infrastructure.Cosmos.csproj", "{44B7E1C6-6EB8-4F10-89BB-87EFB58B4A10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Data.Abstraction", "src\ImageShop.Data.Abstraction\ImageShop.Data.Abstraction.csproj", "{59F25356-174E-40B2-8D57-0E1A58625C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Data.Abstraction", "src\ImageShop.Data.Abstraction\ImageShop.Data.Abstraction.csproj", "{59F25356-174E-40B2-8D57-0E1A58625C67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Data.Cosmos", "src\ImageShop.Data.Cosmos\ImageShop.Data.Cosmos.csproj", "{19FF1B62-91BB-4C26-B698-AAEF2E2B9B91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageShop.Data.Cosmos", "src\ImageShop.Data.Cosmos\ImageShop.Data.Cosmos.csproj", "{19FF1B62-91BB-4C26-B698-AAEF2E2B9B91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageShop.Validators", "src\ImageShop.Validators\ImageShop.Validators.csproj", "{DC5558A3-7695-44CD-9D0B-DA0FAB6F2F9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{19FF1B62-91BB-4C26-B698-AAEF2E2B9B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19FF1B62-91BB-4C26-B698-AAEF2E2B9B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19FF1B62-91BB-4C26-B698-AAEF2E2B9B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC5558A3-7695-44CD-9D0B-DA0FAB6F2F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5558A3-7695-44CD-9D0B-DA0FAB6F2F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5558A3-7695-44CD-9D0B-DA0FAB6F2F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5558A3-7695-44CD-9D0B-DA0FAB6F2F9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

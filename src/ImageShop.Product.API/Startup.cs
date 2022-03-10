@@ -23,6 +23,10 @@ using ImageShop.Data.Abstraction;
 using ImageShop.Product.Infrastructure.Cosmos;
 using ImageShop.Data.Cosmos;
 using ImageShop.Product.Infrastructure.Cosmos.Models;
+using ImageShop.Product.Application.Behaviour;
+using FluentValidation;
+using ImageShop.Validators.Abstractions;
+using ImageShop.Product.API.Filters;
 
 namespace ImageShop.Product.API
 {
@@ -39,7 +43,7 @@ namespace ImageShop.Product.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers(x => x.Filters.Add(typeof(ExceptionFilter)));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ImageShop.Product.API", Version = "v1" });
@@ -49,8 +53,14 @@ namespace ImageShop.Product.API
             //AutoMapper
             services.AddAutoMapper(typeof(BaseMapperProfile).Assembly);
 
+            //validation
+            services.AddValidatorsFromAssembly(typeof(BaseAbstractValidator<>).Assembly);
+
             //Mediatr
             services.AddMediatR(typeof(GetProductsQueryHandler).Assembly);
+
+            //Mediatr Behaviour
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
             //interfaces
             services.AddScoped<IProductRepository, ProductRepository>();
