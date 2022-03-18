@@ -19,5 +19,19 @@
             <param name="newProductDto"> Information regarding the new product</param>
             <returns>Id of the product</returns>
         </member>
+        <member name="M:ImageShop.Product.API.Controllers.ReviewController.Get(System.String)">
+            <summary>
+            Get list of reviews for a product
+            </summary>
+            <param name="productId">The product id</param>
+            <returns>A list of reviews for a product</returns>
+        </member>
+        <member name="M:ImageShop.Product.API.Controllers.ReviewController.Post(ImageShop.Product.Dtos.ReviewDtos.CreateReviewDto)">
+            <summary>
+            Create a new review for a product
+            </summary>
+            <param name="newReviewDto"> Information regarding the new review</param>
+            <returns>Id of the review</returns>
+        </member>
     </members>
 </doc>

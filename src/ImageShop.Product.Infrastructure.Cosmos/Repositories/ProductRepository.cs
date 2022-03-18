@@ -14,22 +14,22 @@ namespace ImageShop.Product.Infrastructure.Cosmos.Repositories
     {
         private readonly IMapper _mapper;
         private readonly ICosmosRepository<ProductModel> _repository;
-        private List<Domain.ProductAggregate.Product> _mockData = new List<Domain.ProductAggregate.Product>();
+        //private List<Domain.ProductAggregate.Product> _mockData = new List<Domain.ProductAggregate.Product>();
 
         public ProductRepository(IMapper mapper, ICosmosRepository<ProductModel> repository)
         {
             _mapper = mapper;
             _repository = repository;
 
-            var product1 = new Domain.ProductAggregate.Product("Red Car", "A speeding red car", 2, Category.Wallpaper, new User("User 1", "user1@test.com"));
-            product1.SetTags(new List<string>() { "car", "drive" });
-            _mockData.Add(product1);
+            //var product1 = new Domain.ProductAggregate.Product("Red Car", "A speeding red car", 2, Category.Wallpaper, new User("User 1", "user1@test.com"));
+            //product1.SetTags(new List<string>() { "car", "drive" });
+            //_mockData.Add(product1);
 
-            var product2 = new Domain.ProductAggregate.Product("Sunset", "A beautiful sunset over the mountains", 5, Category.NotSpecified, new User("User 2", "user2@test.com"));
-            product2.SetTags(new List<string>() { "sun", "sunset", "mountain" });
-            product2.SetTextMessages(new List<string>() { "Over the edge", "The sun is going to sleep" });
-            product2.SetImage(new ImageInfo("dwedw dwd w", "sunset.png", "image/png"));
-            _mockData.Add(product2);
+            //var product2 = new Domain.ProductAggregate.Product("Sunset", "A beautiful sunset over the mountains", 5, Category.NotSpecified, new User("User 2", "user2@test.com"));
+            //product2.SetTags(new List<string>() { "sun", "sunset", "mountain" });
+            //product2.SetTextMessages(new List<string>() { "Over the edge", "The sun is going to sleep" });
+            //product2.SetImage(new ImageInfo("dwedw dwd w", "sunset.png", "image/png"));
+            //_mockData.Add(product2);
 
         }
 

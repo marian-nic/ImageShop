@@ -27,6 +27,7 @@ using ImageShop.Product.Application.Behaviour;
 using FluentValidation;
 using ImageShop.Validators.Abstractions;
 using ImageShop.Product.API.Filters;
+using ImageShop.Product.Domain.ReviewAggregate;
 
 namespace ImageShop.Product.API
 {
@@ -64,6 +65,7 @@ namespace ImageShop.Product.API
 
             //interfaces
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IReviewRepository, ReviewRepository>();
 
             //Cosmos DB
             AddCosmosDbConfigurations(services);
@@ -101,6 +103,7 @@ namespace ImageShop.Product.API
             services.Configure<CosmosDbConfiguration>(cosmosDbConfigurationSection);
 
             services.AddScoped<ICosmosRepository<ProductModel>>(provider => new CosmosRepository<ProductModel>(cosmosDbConfiguration.EndpointUri, cosmosDbConfiguration.PrimaryKey, cosmosDbConfiguration.DatabaseId, "products"));
+            services.AddScoped<ICosmosRepository<ReviewModel>>(provider => new CosmosRepository<ReviewModel>(cosmosDbConfiguration.EndpointUri, cosmosDbConfiguration.PrimaryKey, cosmosDbConfiguration.DatabaseId, "reviews"));
         }
     }
 }
