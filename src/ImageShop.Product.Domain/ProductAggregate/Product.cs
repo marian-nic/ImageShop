@@ -26,6 +26,8 @@ namespace ImageShop.Product.Domain.ProductAggregate
 
         public ImageInfo Image { get; private set; }
 
+        public int NumberOfReviews { get; private set; }
+        public decimal ReviewScore { get; private set; }
 
         public Product(string id, string title, string description, decimal price, Category category, User owner): this(title, description, price, category, owner)
         {
@@ -70,6 +72,18 @@ namespace ImageShop.Product.Domain.ProductAggregate
         public void SetImage(ImageInfo image)
         {
             Image = image;
+        }
+
+        public void SetInitialScoreAndNumberOfReviews(decimal score, int numberOfReviews)
+        {
+            ReviewScore = score;
+            NumberOfReviews = numberOfReviews;
+        }
+
+        public void AddAReviewScore(int score)
+        {
+            ReviewScore = (ReviewScore * NumberOfReviews + score) / (decimal)(NumberOfReviews + 1);
+            NumberOfReviews++;
         }
     }
 }

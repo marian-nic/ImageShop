@@ -23,5 +23,8 @@ namespace ImageShop.Product.Infrastructure.Cosmos.Models
         public string Category { get; set; }
 
         public ImageInfo Image { get;  set; }
+
+        public int NumberOfReviews { get; set; }
+        public decimal ReviewScore { get; set; }
     }
 }

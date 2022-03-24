@@ -1,4 +1,5 @@
 ﻿using ImageShop.Common.Abstractions;
+using ImageShop.Product.Domain.DomainEvents;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,11 @@ namespace ImageShop.Product.Domain.ReviewAggregate
 
             if (!string.IsNullOrWhiteSpace(id))
                 Id = id;
+        }
+
+        public void RegisterNewReviewAddedDomainEvent()
+        {
+            AddDomainEvent(new NewReviewAddedDomainEvent(Score, ProductId));
         }
     }
 }

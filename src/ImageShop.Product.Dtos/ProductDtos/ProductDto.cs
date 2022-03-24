@@ -20,5 +20,8 @@ namespace ImageShop.Product.Dtos.ProductDtos
         public string Category { get; set; }
 
         public ImageInfoDto Image { get; set; }
+
+        public int NumberOfReviews { get; set; }
+        public decimal ReviewScore { get; set; }
     }
 }

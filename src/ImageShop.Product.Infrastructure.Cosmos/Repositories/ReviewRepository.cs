@@ -26,9 +26,9 @@ namespace ImageShop.Product.Infrastructure.Cosmos.Repositories
             await _repository.InitializeDatabaseAndContainer();
 
             var reviewModel = _mapper.Map<ReviewModel>(review);
-            var result = await _repository.CreateAsync(reviewModel, false);
+            await _repository.CreateAsync(reviewModel, false);
 
-            return result.Id;
+            return review.Id;
         }
 
         public async Task<List<Review>> GetList(string productId)
