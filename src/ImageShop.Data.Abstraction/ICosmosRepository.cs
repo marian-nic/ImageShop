@@ -11,5 +11,7 @@ namespace ImageShop.Data.Abstraction
         Task<IEnumerable<T>> GetListAsync(Expression<Func<T, bool>> filterExpression, string partitionKey = null);
         Task InitializeDatabaseAndContainer();
         Task<T> CreateAsync(T item, bool returnCreatedItem = false);
+
+        Task<T> UpdateAsync(T item, bool returnUpdatedItem = false);
     }
 }

@@ -30,7 +30,7 @@ namespace ImageShop.Product.Application.DomainEventHandlers
 
             product.AddAReviewScore(notification.Score);
 
-            //TODO create _repository.Update(product)
+           var result =  await _repository.Update(product, true);
         }
     }
 }

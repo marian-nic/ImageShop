@@ -88,5 +88,22 @@ namespace ImageShop.Data.Cosmos
 
             return default(T);
         }
+
+        public async Task<T> UpdateAsync(T item, bool returnUpdatedItem = false)
+        {
+            var partitionKey = new PartitionKey(item.PartitionKey); //should have the same partition key; it cannot be changed
+            var itemResponse = await CosmosContainer.ReplaceItemAsync(item, item.Id, partitionKey,
+                new ItemRequestOptions()
+                {
+                    EnableContentResponseOnWrite = returnUpdatedItem
+                });
+
+            if(itemResponse != null && itemResponse.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return itemResponse.Resource;
+            }
+
+            return default(T);
+        }
     }
 }
