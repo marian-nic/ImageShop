@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.Abstractions", "src\ImageRecognition.Abstractions\ImageRecognition.Abstractions.csproj", "{5DEA97BB-E41C-46A6-876E-25783980A672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.Infrastructure.AzureVision", "src\ImageRecognition.Infrastructure.AzureVision\ImageRecognition.Infrastructure.AzureVision.csproj", "{55A730C3-2373-47D9-9561-FE581963EAF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageRecognition.Demo", "src\ImageRecognition.Demo\ImageRecognition.Demo.csproj", "{D44A0B64-3D7A-4375-B4D0-ABAF38AD1AAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DEA97BB-E41C-46A6-876E-25783980A672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DEA97BB-E41C-46A6-876E-25783980A672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DEA97BB-E41C-46A6-876E-25783980A672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DEA97BB-E41C-46A6-876E-25783980A672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A730C3-2373-47D9-9561-FE581963EAF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A730C3-2373-47D9-9561-FE581963EAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A730C3-2373-47D9-9561-FE581963EAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A730C3-2373-47D9-9561-FE581963EAF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44A0B64-3D7A-4375-B4D0-ABAF38AD1AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44A0B64-3D7A-4375-B4D0-ABAF38AD1AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44A0B64-3D7A-4375-B4D0-ABAF38AD1AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44A0B64-3D7A-4375-B4D0-ABAF38AD1AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0AD74C4-E37A-4A19-A4D5-A03B6D9F8110}
+	EndGlobalSection
+EndGlobal
